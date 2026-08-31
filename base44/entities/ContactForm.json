@@ -1,0 +1,68 @@
+{
+  "name": "ContactForm",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Teklif talep sahibinin ad\u0131"
+    },
+    "company": {
+      "type": "string",
+      "description": "Firma ad\u0131"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefon numaras\u0131"
+    },
+    "email": {
+      "type": "string",
+      "description": "E-posta adresi"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Talep konusu"
+    },
+    "location": {
+      "type": "string",
+      "description": "Proje/saha lokasyonu"
+    },
+    "message": {
+      "type": "string",
+      "description": "Mesaj i\u00e7eri\u011fi"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewed",
+        "responded"
+      ],
+      "default": "new",
+      "description": "Talebin durumu"
+    }
+  },
+  "required": [
+    "name",
+    "phone",
+    "email",
+    "message"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

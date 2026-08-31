@@ -1,0 +1,9 @@
+{
+  "name": "BİEM Elektronik",
+  "short_name": "BİEM",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#06b6d4",
+  "lang": "tr"
+}

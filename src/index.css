@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --background: 222 40% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 35% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 35% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 222 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 20% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 40 100% 50%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 186 100% 50%;
+    --chart-1: 186 100% 50%;
+    --chart-2: 40 100% 50%;
+    --chart-3: 220 70% 50%;
+    --chart-4: 160 60% 45%;
+    --chart-5: 280 65% 60%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 35% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 222 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 186 100% 50%;
+  }
+
+  .dark {
+    --background: 222 40% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 35% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 35% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 222 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 20% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 40 100% 50%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 186 100% 50%;
+    --chart-1: 186 100% 50%;
+    --chart-2: 40 100% 50%;
+    --chart-3: 220 70% 50%;
+    --chart-4: 160 60% 45%;
+    --chart-5: 280 65% 60%;
+    --sidebar-background: 222 35% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 222 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    overscroll-behavior: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    overscroll-behavior: none;
+  }
+
+  /* Prevent text selection on interactive elements */
+  nav, button, a, [role="button"] {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(222 47% 4%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(222 20% 18%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(186 100% 50% / 0.3);
+}
+
+/* Signal line animation */
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(186 100% 50% / 0.2); }
+  50% { box-shadow: 0 0 20px hsl(186 100% 50% / 0.4); }
+}
+
+@keyframes glow-sweep {
+  0% { 
+    box-shadow: inset -40px 0 30px hsl(0 0% 60% / 0.4), inset 0 0 70px hsl(0 0% 100% / 1.0);
+  }
+  25% { 
+    box-shadow: inset 40px 0 30px hsl(0 0% 60% / 0.4), inset 0 0 70px hsl(0 0% 100% / 1.0);
+  }
+  50% { 
+    box-shadow: inset 0 0 0 hsl(0 0% 60% / 0), inset 0 0 70px hsl(0 0% 100% / 1.0);
+  }
+  75% { 
+    box-shadow: inset -40px 0 30px hsl(0 0% 60% / 0.4), inset 0 0 70px hsl(0 0% 100% / 1.0);
+  }
+  100% { 
+    box-shadow: inset 40px 0 30px hsl(0 0% 60% / 0.4), inset 0 0 70px hsl(0 0% 100% / 1.0);
+  }
+}
+
+.animate-signal-pulse {
+  animation: signal-pulse 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
