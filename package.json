@@ -1,10 +1,13 @@
 {
-  "name": "base44-app",
+  "name": "biem-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "assets:sync": "node scripts/sync-public-assets.mjs",
+    "predev": "npm run assets:sync",
     "dev": "vite",
+    "prebuild": "npm run assets:sync",
     "build": "vite build",
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
