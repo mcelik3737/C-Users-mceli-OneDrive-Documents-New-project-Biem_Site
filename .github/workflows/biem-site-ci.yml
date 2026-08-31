@@ -37,3 +37,11 @@ jobs:
           test -f dist/robots.txt
           test -f dist/sitemap.xml
           test -d dist/assets/images
+
+      - name: Upload Natro deployment package
+        uses: actions/upload-artifact@v4
+        with:
+          name: biem-natro-dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
