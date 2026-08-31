@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Radio, Network, Repeat, Settings, Monitor, ChevronDown, ChevronUp, FileText } from "lucide-react";
 
-const CATALOG_URL = "https://media.base44.com/files/public/6a0f643fac0d957e314ae3c0/f6595714e_2026_HyteraDMRSystemProductsandSolutions_1.pdf";
+const CATALOG_URL = "/biem-dosyalar/files/f6595714e_2026_HyteraDMRSystemProductsandSolutions_1.pdf";
 
 const systemGroups = [
   {
     icon: Network,
     title: "Trunking System",
     tag: "IP Site Connect / HYTALK Trunk",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/94a8db628_What-is-DMR-radio-standard-tiersjpg.webp",
+    image: "/biem-dosyalar/images/94a8db628_What-is-DMR-radio-standard-tiersjpg.webp",
     description: "Birden fazla baz istasyonunu tek bir omurga üzerinde birleştiren, otomatik kanal tahsisli DMR Trunking altyapısı. Geniş coğrafi alanlarda merkezi çağrı yönetimi sağlar.",
     features: ["Otomatik kanal tahsisi", "Merkezi çağrı yönetimi", "Yüksek kullanıcı kapasitesi", "IP omurga entegrasyonu"],
     url: "https://www.hytera.com/eu/solutions/dmr-trunking/",
@@ -19,8 +19,8 @@ const systemGroups = [
     title: "Simulcast System",
     tag: "Geniş Alan Kapsama",
     images: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0e0c307c8_Simulcast_Architecture2.webp",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/5cffa277e_rendition.jpg",
+      "/biem-dosyalar/images/0e0c307c8_Simulcast_Architecture2.webp",
+      "/biem-dosyalar/images/5cffa277e_rendition.jpg",
     ],
     description: "Aynı frekans ve içeriğin eş zamanlı birden fazla noktadan yayınlandığı, kesintisiz geniş alan kapsama sağlayan DMR Simulcast altyapısı. Metro, havalimanı ve büyük kampüslerde idealdir.",
     features: ["Eş zamanlı çok noktalı yayın", "Sınırsız kapsama genişlemesi", "Kesintisiz geçiş (seamless roaming)", "GPS konum entegrasyonu"],
@@ -30,7 +30,7 @@ const systemGroups = [
     icon: Radio,
     title: "XPT (Extended Pseudo Trunking)",
     tag: "Çok Kanallı Kapasite",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/55d6040bd_Hytera_XPT_Extended_Pseudo_Trunking-980x980.jpg",
+    image: "/biem-dosyalar/images/55d6040bd_Hytera_XPT_Extended_Pseudo_Trunking-980x980.jpg",
     description: "Mevcut DMR altyapısını trunking benzeri kapasite artışıyla genişleten, uygun maliyetli çok kanallı çözüm. Kurulum kolaylığı ve lisans avantajıyla öne çıkar.",
     features: ["Çok kanallı otomatik tahsis", "Mevcut DMR altyapısıyla uyumlu", "Düşük lisans maliyeti", "Hızlı devreye alma"],
     url: "https://www.hytera.com/eu/solutions/xpt/",
@@ -39,7 +39,7 @@ const systemGroups = [
     icon: Settings,
     title: "Conventional Repeater",
     tag: "Tekli / Çoklu Repeater",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a317fc127_DMR-Tier-II-Repeater-System-Header.jpg",
+    image: "/biem-dosyalar/images/a317fc127_DMR-Tier-II-Repeater-System-Header.jpg",
     description: "Tek veya çoklu baz istasyonuyla kurulan klasik DMR Konvansiyonel sistem. Küçük ve orta ölçekli işletmeler için ekonomik ve güvenilir haberleşme altyapısı.",
     features: ["Tekli ve çoklu repeater desteği", "IP Site Connect ile bölgeler arası bağlantı", "Kolay kurulum", "Uygun maliyet"],
     url: "https://www.hytera.com/eu/solutions/conventional-dmr/",
@@ -49,9 +49,9 @@ const systemGroups = [
     title: "Yazılımlar",
     tag: "SmartOne / HYTalk / RMS",
     images: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/bb7ec8796_unified-communication-dispatch-menupng_n.webp",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/60c64b3b6_rendition.png",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f410e0513_rendition.jpg",
+      "/biem-dosyalar/images/bb7ec8796_unified-communication-dispatch-menupng_n.webp",
+      "/biem-dosyalar/images/60c64b3b6_rendition.png",
+      "/biem-dosyalar/images/f410e0513_rendition.jpg",
     ],
     description: "DMR sistemleri için merkezi yönetim, izleme, konum takibi ve haberleşme yazılımları. Dispatcher, ağ yönetim ve raporlama araçlarıyla tam operasyonel kontrol.",
     features: ["SmartOne Dispatcher", "HYTalk PoC Entegrasyonu", "RMS Uzaktan Yönetim", "Konum & Telemetri"],

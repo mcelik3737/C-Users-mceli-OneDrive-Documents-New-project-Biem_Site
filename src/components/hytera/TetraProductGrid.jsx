@@ -2,10 +2,10 @@ import React from "react";
 import { FileText } from "lucide-react";
 
 const products = [
-  { model: "PT560H", category: "TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt560h", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/c8c209196_PT560H-1.png" },
-  { model: "PT590", category: "Profesyonel TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt590", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a0cf741e1_hytera_pt590.png" },
-  { model: "MT680 Plus", category: "TETRA Mobil Telsiz", url: "https://www.hytera.com/eu/products/tetra-radio/mt680-plus", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/d91a8e0cf_MT680PLUS_41.png" },
-  { model: "PT580H Plus UL923", category: "ATEX TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt580h-plus-ul923", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a3672a5ea_PT580HPlusUL913_1.png" },
+  { model: "PT560H", category: "TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt560h", img: "/biem-dosyalar/images/c8c209196_PT560H-1.png" },
+  { model: "PT590", category: "Profesyonel TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt590", img: "/biem-dosyalar/images/a0cf741e1_hytera_pt590.png" },
+  { model: "MT680 Plus", category: "TETRA Mobil Telsiz", url: "https://www.hytera.com/eu/products/tetra-radio/mt680-plus", img: "/biem-dosyalar/images/d91a8e0cf_MT680PLUS_41.png" },
+  { model: "PT580H Plus UL923", category: "ATEX TETRA El Telsizi", url: "https://www.hytera.com/eu/products/tetra-radio/pt580h-plus-ul923", img: "/biem-dosyalar/images/a3672a5ea_PT580HPlusUL913_1.png" },
 ];
 
 function RadioIcon() {

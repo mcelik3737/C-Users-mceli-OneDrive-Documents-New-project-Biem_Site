@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Radio, TrainFront, Wifi } from "lucide-react";
 import { motion } from "framer-motion";
 
-const heroImage = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/de672e6e4_generated_bad7140b.png";
+const heroImage = "/biem-dosyalar/images/de672e6e4_generated_bad7140b.png";
 
 const badges = [
   { icon: Radio, label: "Hytera Telsiz Sistemleri" },

@@ -3,19 +3,19 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { FileText } from "lucide-react";
 
 const products = [
-  { model: "AP32X", category: "Ultralight Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap32x/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a8b6a6432_rendition.png" },
-  { model: "AP519 LF", category: "Enhanced Business Licence-free Analogue two-way radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap519-lf/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f78a72200_rendition.jpg" },
-  { model: "AP519", category: "New Generation Business Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap519/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f35b6e1fe_rendition.png" },
-  { model: "AP589", category: "New Generation Business Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap589/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/98b002ff3_rendition.png" },
-  { model: "HYT-S31", category: "S series Business Two-way Radio (S1)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s31/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/73e6804a1_rendition.png" },
-  { model: "HYT-S31 LF", category: "S series Business Two-way Radio (S1 LF)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s31-lf/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/8056c8c20_rendition.png" },
-  { model: "HYT-S10", category: "S series Business Two-way Radio (S1 mini)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s10/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/632ac094d_rendition.png" },
-  { model: "HYT-S10 LF", category: "S series Business Two-way Radio (S1 mini LF)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s10-lf/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/df4870fd6_rendition.png" },
-  { model: "HYT-S11", category: "S series Business Two-way Radio (S1 E)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s11/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/cc0204187_rendition.png" },
-  { model: "TC-320", category: "Cost-effective Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-320/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f8ad743f7_rendition.jpg" },
-  { model: "TC-320 Enhanced", category: "Cost-effective Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-320-enhanced/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/9fe4e22fe_rendition.jpg" },
-  { model: "TC-446S Enhanced", category: "Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-446s-enhanced/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/5421d293f_hytera-tc446s.jpg" },
-  { model: "TC-508", category: "Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-508/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f04ecf88_rendition.jpg" },
+  { model: "AP32X", category: "Ultralight Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap32x/", image: "/biem-dosyalar/images/a8b6a6432_rendition.png" },
+  { model: "AP519 LF", category: "Enhanced Business Licence-free Analogue two-way radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap519-lf/", image: "/biem-dosyalar/images/f78a72200_rendition.jpg" },
+  { model: "AP519", category: "New Generation Business Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap519/", image: "/biem-dosyalar/images/f35b6e1fe_rendition.png" },
+  { model: "AP589", category: "New Generation Business Radio", url: "https://www.hytera.com/eu/products/analogue-radios/ap589/", image: "/biem-dosyalar/images/98b002ff3_rendition.png" },
+  { model: "HYT-S31", category: "S series Business Two-way Radio (S1)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s31/", image: "/biem-dosyalar/images/73e6804a1_rendition.png" },
+  { model: "HYT-S31 LF", category: "S series Business Two-way Radio (S1 LF)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s31-lf/", image: "/biem-dosyalar/images/8056c8c20_rendition.png" },
+  { model: "HYT-S10", category: "S series Business Two-way Radio (S1 mini)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s10/", image: "/biem-dosyalar/images/632ac094d_rendition.png" },
+  { model: "HYT-S10 LF", category: "S series Business Two-way Radio (S1 mini LF)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s10-lf/", image: "/biem-dosyalar/images/df4870fd6_rendition.png" },
+  { model: "HYT-S11", category: "S series Business Two-way Radio (S1 E)", url: "https://www.hytera.com/eu/products/analogue-radios/hyt-s11/", image: "/biem-dosyalar/images/cc0204187_rendition.png" },
+  { model: "TC-320", category: "Cost-effective Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-320/", image: "/biem-dosyalar/images/f8ad743f7_rendition.jpg" },
+  { model: "TC-320 Enhanced", category: "Cost-effective Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-320-enhanced/", image: "/biem-dosyalar/images/9fe4e22fe_rendition.jpg" },
+  { model: "TC-446S Enhanced", category: "Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-446s-enhanced/", image: "/biem-dosyalar/images/5421d293f_hytera-tc446s.jpg" },
+  { model: "TC-508", category: "Business Two-way Radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-508/", image: "/biem-dosyalar/images/6f04ecf88_rendition.jpg" },
   { model: "TC-508 Enhanced", category: "Business Licence-free Analogue two-way radio", url: "https://www.hytera.com/eu/products/analogue-radios/tc-508-enhanced/" },
 ];
 

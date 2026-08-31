@@ -11,7 +11,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Phone, Mail, MapPin, ExternalLink, Send, Loader2, CheckCircle2, Linkedin, Facebook, Instagram } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import { base44 } from "@/api/base44Client";
 
 const EMAILJS_SERVICE_ID = "service_qjfzcu1";
 const EMAILJS_TEMPLATE_ID = "template_lkfwe49";
@@ -47,17 +46,6 @@ export default function Contact() {
     }
     setLoading(true);
     try {
-      // Save to database
-      await base44.entities.ContactForm.create({
-        name: form.name,
-        company: form.company,
-        phone: form.phone,
-        email: form.email,
-        subject: form.subject,
-        location: form.location,
-        message: form.message,
-      });
-
       // Send email via EmailJS
       await emailjs.send(
         EMAILJS_SERVICE_ID,

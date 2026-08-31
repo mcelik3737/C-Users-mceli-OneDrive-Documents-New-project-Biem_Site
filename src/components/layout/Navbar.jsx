@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronLeft, Phone, Mail, Settings } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronLeft, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchBar from "@/components/layout/SearchBar";
 import GifModal from "@/components/shared/GifModal";
-import { useAuth } from "@/lib/AuthContext";
 
-const POC_GIF = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/110899aec_p60_1.gif";
+const POC_GIF = "/biem-dosyalar/images/110899aec_p60_1.gif";
 
 const mainNav = [
   { label: "Ana Sayfa", path: "/" },
@@ -61,7 +60,6 @@ export default function Navbar() {
   const [dropdownTimer, setDropdownTimer] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
   const isRoot = location.pathname === "/";
 
   useEffect(() => {
@@ -129,7 +127,7 @@ export default function Navbar() {
               )}
               <Link to="/" className="flex items-center group">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/91ac19b2e_logo_png.png"
+                  src="/biem-dosyalar/images/91ac19b2e_logo_png.png"
                   alt="BİEM Elektronik"
                   className="h-11 w-auto object-contain"
                 />
@@ -203,15 +201,6 @@ export default function Navbar() {
               <div className="hidden lg:block">
                 <SearchBar />
               </div>
-              {isAuthenticated && (
-                <Link
-                  to="/hesap-ayarlari"
-                  className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors select-none"
-                  title="Hesap Ayarları"
-                >
-                  <Settings className="w-4 h-4" />
-                </Link>
-              )}
               <Link to="/iletisim" className="select-none">
                 <Button className="hidden sm:flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm px-5 select-none">
                   Teklif Al

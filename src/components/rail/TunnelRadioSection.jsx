@@ -4,7 +4,7 @@ import { Radio, AlertTriangle, Wifi, Train, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const diagramImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6ce631e0a_ChatGPTImage2Haz202615_53_10.png";
+const diagramImg = "/biem-dosyalar/images/6ce631e0a_ChatGPTImage2Haz202615_53_10.png";
 
 const systemSteps = [
   { num: "1", title: "Dış FM Yayın Anteni / Yayın Kaynağı", desc: "Açık ortamdan FM sinyali alımı" },

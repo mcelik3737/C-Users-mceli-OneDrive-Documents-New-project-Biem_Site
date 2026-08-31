@@ -2,12 +2,12 @@ import React from "react";
 import { TrainFront, Mountain, HardHat, Zap, Factory, Shield } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
-const mineImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/29143fc36_generated_19c7fa73.png";
-const energyImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/128dd205e_generated_24a41ca8.png";
-const industrialImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/58386d917_generated_939516fe.png";
-const publicSafetyImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/3423ab2ec_generated_f46b8aeb.png";
-const tunnelImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/de672e6e4_generated_bad7140b.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
+const mineImg = "/biem-dosyalar/images/29143fc36_generated_19c7fa73.png";
+const energyImg = "/biem-dosyalar/images/128dd205e_generated_24a41ca8.png";
+const industrialImg = "/biem-dosyalar/images/58386d917_generated_939516fe.png";
+const publicSafetyImg = "/biem-dosyalar/images/3423ab2ec_generated_f46b8aeb.png";
+const tunnelImg = "/biem-dosyalar/images/de672e6e4_generated_bad7140b.png";
 
 const sectors = [
   { icon: TrainFront, title: "Raylı Sistemler", text: "Metro, tramvay, demiryolu, istasyon ve tünel projeleri için haberleşme ve güvenlik altyapıları.", image: railImg },

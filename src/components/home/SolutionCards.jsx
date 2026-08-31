@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Radio, TrainFront, Wifi } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 
-const wirelessImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0a7fe552c_generated_82fab6dc.png";
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
-const dasImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png";
+const wirelessImg = "/biem-dosyalar/images/0a7fe552c_generated_82fab6dc.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
+const dasImg = "/biem-dosyalar/images/b89abb303_generated_fce2d3bb.png";
 
 const solutions = [
   {

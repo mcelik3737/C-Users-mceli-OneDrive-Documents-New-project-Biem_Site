@@ -4,10 +4,10 @@ import { ArrowRight, Zap, Mountain, TrainFront, HardHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/shared/SectionHeader";
 
-const energyImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/128dd205e_generated_24a41ca8.png";
-const tunnelImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/de672e6e4_generated_bad7140b.png";
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
-const mineImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/29143fc36_generated_19c7fa73.png";
+const energyImg = "/biem-dosyalar/images/128dd205e_generated_24a41ca8.png";
+const tunnelImg = "/biem-dosyalar/images/de672e6e4_generated_bad7140b.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
+const mineImg = "/biem-dosyalar/images/29143fc36_generated_19c7fa73.png";
 
 const projects = [
   {

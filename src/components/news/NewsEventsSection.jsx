@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { base44 } from "@/api/base44Client";
+import React, { useState } from "react";
+import newsEventsData from "@/data/newsEvents.json";
 import { Newspaper, Presentation, CalendarDays, ArrowRight, X, ChevronLeft, ChevronRight, Play, Camera } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const typeConfig = {
   haber: { icon: Newspaper, color: "text-blue-400", bg: "bg-blue-400/10", border: "border-blue-400/20", label: "Haber" },
@@ -118,16 +117,9 @@ function DetailModal({ item, onClose }) {
 }
 
 export default function NewsEventsSection() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const items = Array.isArray(newsEventsData) ? newsEventsData : [];
   const [activeFilter, setActiveFilter] = useState("tümü");
   const [selectedItem, setSelectedItem] = useState(null);
-
-  useEffect(() => {
-    base44.entities.NewsEvent.list("-date")
-      .then(setItems)
-      .finally(() => setLoading(false));
-  }, []);
 
   const filtered = activeFilter === "tümü"
     ? items
@@ -167,20 +159,7 @@ export default function NewsEventsSection() {
             ))}
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {[1, 2, 3].map(i => (
-                <div key={i} className="rounded-xl border border-border/50 overflow-hidden">
-                  <Skeleton className="h-44 w-full rounded-none" />
-                  <div className="p-4 space-y-2">
-                    <Skeleton className="h-3 w-20" />
-                    <Skeleton className="h-5 w-full" />
-                    <Skeleton className="h-3 w-28" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : filtered.length === 0 ? (
+          {filtered.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-muted-foreground text-sm">
                 {activeFilter === "tümü"

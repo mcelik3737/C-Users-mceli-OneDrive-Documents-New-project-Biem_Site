@@ -6,7 +6,7 @@ import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Wifi, Cable, Radio, Shield, Signal, Globe, Mountain, Settings } from "lucide-react";
 
-const dasImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png";
+const dasImg = "/biem-dosyalar/images/b89abb303_generated_fce2d3bb.png";
 
 const solutions = [
   { icon: Wifi, title: "Fiber RF Repeater / BDA", text: "Geniş alan, tünel, maden ve raylı sistem projelerinde merkezi birim ve uzak birimler üzerinden RF sinyal dağıtımı sağlayan fiber tabanlı çözümler." },
@@ -106,11 +106,11 @@ export default function DasRfSolutions() {
           {/* Image gallery */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a00ed39ea_ento-Kopya.png", label: "Outdoor RF Kapsama Haritası — İstanbul" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b980529e5_8e3b7e13-1bd3-460a-a5ea-b31c20210394.png", label: "Indoor DAS Kapsama Haritası" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/ae6efcdbd_kapsama.png", label: "Şehir İçi RF Kapsama Analizi — İstanbul" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/4691218c2_U26_KAPSAMA.png", label: "Outdoor RF Propagasyon Analizi" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/9f07ca3fd_kapsama.png", label: "Endüstriyel Saha Kapsama Haritası — Milas" },
+              { src: "/biem-dosyalar/images/a00ed39ea_ento-Kopya.png", label: "Outdoor RF Kapsama Haritası — İstanbul" },
+              { src: "/biem-dosyalar/images/b980529e5_8e3b7e13-1bd3-460a-a5ea-b31c20210394.png", label: "Indoor DAS Kapsama Haritası" },
+              { src: "/biem-dosyalar/images/ae6efcdbd_kapsama.png", label: "Şehir İçi RF Kapsama Analizi — İstanbul" },
+              { src: "/biem-dosyalar/images/4691218c2_U26_KAPSAMA.png", label: "Outdoor RF Propagasyon Analizi" },
+              { src: "/biem-dosyalar/images/9f07ca3fd_kapsama.png", label: "Endüstriyel Saha Kapsama Haritası — Milas" },
             ].map((img, i) => (
               <div key={i} className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
                 <div className="bg-black/40 flex items-center justify-center p-3 h-56">

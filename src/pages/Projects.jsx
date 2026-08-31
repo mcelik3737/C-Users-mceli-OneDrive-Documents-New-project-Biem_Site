@@ -7,11 +7,11 @@ import ProjectDetailModal from "@/components/projects/ProjectDetailModal";
 import NewsEventsSection from "@/components/news/NewsEventsSection";
 import { Zap, Mountain, TrainFront, HardHat, Factory, Megaphone, Wind } from "lucide-react";
 
-const energyImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/128dd205e_generated_24a41ca8.png";
-const tunnelImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/de672e6e4_generated_bad7140b.png";
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
-const mineImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/29143fc36_generated_19c7fa73.png";
-const industrialImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/58386d917_generated_939516fe.png";
+const energyImg = "/biem-dosyalar/images/128dd205e_generated_24a41ca8.png";
+const tunnelImg = "/biem-dosyalar/images/de672e6e4_generated_bad7140b.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
+const mineImg = "/biem-dosyalar/images/29143fc36_generated_19c7fa73.png";
+const industrialImg = "/biem-dosyalar/images/58386d917_generated_939516fe.png";
 
 const projects = [
   {
@@ -23,9 +23,9 @@ const projects = [
     icon: Zap,
     image: energyImg,
     gallery: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/00c4a69d2_WhatsAppImage2026-06-16at161925.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/2b98b31da_WhatsAppImage2026-06-17at110839.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/9b55f2170_WhatsAppImage2026-06-17at112029.jpg",
+      "/biem-dosyalar/images/00c4a69d2_WhatsAppImage2026-06-16at161925.jpg",
+      "/biem-dosyalar/images/2b98b31da_WhatsAppImage2026-06-17at110839.jpg",
+      "/biem-dosyalar/images/9b55f2170_WhatsAppImage2026-06-17at112029.jpg",
     ],
     stats: ["5 Site", "550+ El Telsizi", "70 Araç Telsizi", "Rüzgar + Güneş Enerji", "Radyolink / GSM / Uydu"],
   },
@@ -38,14 +38,14 @@ const projects = [
     icon: Wind,
     image: energyImg,
     gallery: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/16c262462_WhatsAppImage2026-06-17at122015.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b9319e4d9_WhatsAppImage2026-06-17at1220161.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/1f935ea97_WhatsAppImage2026-06-17at1220162.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f3846a8e3_WhatsAppImage2026-06-17at1220163.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/1cea63931_WhatsAppImage2026-06-17at122016.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/c2b692108_WhatsAppImage2026-06-17at1220171.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/25439965d_WhatsAppImage2026-06-17at1220172.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/d05871cf7_WhatsAppImage2026-06-17at122017.jpg",
+      "/biem-dosyalar/images/16c262462_WhatsAppImage2026-06-17at122015.jpg",
+      "/biem-dosyalar/images/b9319e4d9_WhatsAppImage2026-06-17at1220161.jpg",
+      "/biem-dosyalar/images/1f935ea97_WhatsAppImage2026-06-17at1220162.jpg",
+      "/biem-dosyalar/images/f3846a8e3_WhatsAppImage2026-06-17at1220163.jpg",
+      "/biem-dosyalar/images/1cea63931_WhatsAppImage2026-06-17at122016.jpg",
+      "/biem-dosyalar/images/c2b692108_WhatsAppImage2026-06-17at1220171.jpg",
+      "/biem-dosyalar/images/25439965d_WhatsAppImage2026-06-17at1220172.jpg",
+      "/biem-dosyalar/images/d05871cf7_WhatsAppImage2026-06-17at122017.jpg",
     ],
     stats: ["6 Lokasyon", "DMR Tier2 Multi-Site", "İSG Operasyonları", "Dispatcher İzleme"],
   },
@@ -68,10 +68,10 @@ const projects = [
     icon: TrainFront,
     image: railImg,
     gallery: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/8d8170a87_WhatsAppImage2026-06-17at120805.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/ec39e7ec1_WhatsAppImage2026-06-16at161925.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a3eeeaad5_WhatsAppImage2026-06-16at161926.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/09877b0db_WhatsAppImage2026-06-17at120218.jpg",
+      "/biem-dosyalar/images/8d8170a87_WhatsAppImage2026-06-17at120805.jpg",
+      "/biem-dosyalar/images/ec39e7ec1_WhatsAppImage2026-06-16at161925.jpg",
+      "/biem-dosyalar/images/a3eeeaad5_WhatsAppImage2026-06-16at161926.jpg",
+      "/biem-dosyalar/images/09877b0db_WhatsAppImage2026-06-17at120218.jpg",
     ],
     stats: ["8 İstasyon", "DIB-R5 Advance", "DIB-R5 Outdoor", "TETRA"],
   },
@@ -94,8 +94,8 @@ const projects = [
     icon: Megaphone,
     image: mineImg,
     gallery: [
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/36f0e4e1e_WhatsAppImage2026-06-16at161046.jpg",
-      "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/feed3acf7_WhatsAppImage2026-06-16at161029.jpg",
+      "/biem-dosyalar/images/36f0e4e1e_WhatsAppImage2026-06-16at161046.jpg",
+      "/biem-dosyalar/images/feed3acf7_WhatsAppImage2026-06-16at161029.jpg",
     ],
     stats: ["40 Lokasyon", "Güneş Enerjili", "8 Zone", "130dB Ses Yayını", "500W"],
   },

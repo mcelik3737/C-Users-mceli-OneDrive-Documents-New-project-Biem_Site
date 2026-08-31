@@ -3,14 +3,14 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { FileText } from "lucide-react";
 
 const products = [
-  { model: "HP50X UL913", category: "Intrinsically Safe DMR Portable Two-way Radio (UL913)", url: "https://www.hytera.com/eu/products/dmr-radios/hp50x-ul913/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0caadd103_rendition.png" },
-  { model: "HP56X UL913", category: "Intrinsically Safe DMR Portable Two-way Radio (UL913)", url: "https://www.hytera.com/eu/products/dmr-radios/hp56x-ul913/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/1543a92de_rendition.png" },
-  { model: "HP709 UL913", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp709-ul913/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/47972d38e_rendition.jpg" },
-  { model: "HP71XEx IIA", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp71xex-iia/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/2535a6324_rendition.jpg" },
-  { model: "HP71XEx IIC", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp71xex-iic/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/bdb20db3c_rendition.png" },
-  { model: "HP789 UL913", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp789-ul913/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/44ffd519c_rendition.png" },
-  { model: "HP79XEx IIC", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp79xex-iic/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/c39963ce7_rendition.png" },
-  { model: "HP79XEx IIA", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp79xex-iia/", image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/187a150b5_rendition.png" },
+  { model: "HP50X UL913", category: "Intrinsically Safe DMR Portable Two-way Radio (UL913)", url: "https://www.hytera.com/eu/products/dmr-radios/hp50x-ul913/", image: "/biem-dosyalar/images/0caadd103_rendition.png" },
+  { model: "HP56X UL913", category: "Intrinsically Safe DMR Portable Two-way Radio (UL913)", url: "https://www.hytera.com/eu/products/dmr-radios/hp56x-ul913/", image: "/biem-dosyalar/images/1543a92de_rendition.png" },
+  { model: "HP709 UL913", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp709-ul913/", image: "/biem-dosyalar/images/47972d38e_rendition.jpg" },
+  { model: "HP71XEx IIA", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp71xex-iia/", image: "/biem-dosyalar/images/2535a6324_rendition.jpg" },
+  { model: "HP71XEx IIC", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp71xex-iic/", image: "/biem-dosyalar/images/bdb20db3c_rendition.png" },
+  { model: "HP789 UL913", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp789-ul913/", image: "/biem-dosyalar/images/44ffd519c_rendition.png" },
+  { model: "HP79XEx IIC", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp79xex-iic/", image: "/biem-dosyalar/images/c39963ce7_rendition.png" },
+  { model: "HP79XEx IIA", category: "Intrinsically Safe DMR Portable Two-way Radio", url: "https://www.hytera.com/eu/products/dmr-radios/hp79xex-iia/", image: "/biem-dosyalar/images/187a150b5_rendition.png" },
 ];
 
 function RadioIcon() {
@@ -63,7 +63,7 @@ export default function ExproofProductGrid() {
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-3">Hytera ATEX Intrinsically Safe El Telsiz Modelleri</h2>
             <p className="text-muted-foreground text-sm max-w-xl">Tehlikeli ortamlar için ATEX sertifikası ile güvenli haberleşme çözümleri.</p>
           </div>
-          <a href="https://media.base44.com/files/public/6a0f643fac0d957e314ae3c0/886c9cd9a_2026_HyteraIntrinsicallySafeTwo-wayRadioCatalog1.pdf" target="_blank" rel="noopener noreferrer"
+          <a href="/biem-dosyalar/files/886c9cd9a_2026_HyteraIntrinsicallySafeTwo-wayRadioCatalog1.pdf" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors text-sm font-semibold shrink-0">
             <FileText className="w-4 h-4" /> Genel Katalog (PDF)
           </a>

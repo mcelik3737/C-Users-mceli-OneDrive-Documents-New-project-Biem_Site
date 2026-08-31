@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Radio, Repeat, Music, Megaphone, Camera, Lock, Phone, Network } from "lucide-react";
 
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
 
 const solutions = [
   { icon: Radio, title: "Tünel Telsiz Haberleşme Sistemleri", text: "Tünel içinde DMR, TETRA, VHF, UHF ve özel frekans haberleşmesi için RF repeater, leaky feeder, anten ve pasif RF dağıtım çözümleri.", tab: null },

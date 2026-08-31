@@ -8,8 +8,8 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import GifModal from "@/components/shared/GifModal";
 import { Radio, Repeat, Monitor, Smartphone, ShieldAlert, ArrowRight, Volume2, Camera } from "lucide-react";
 
-const wirelessImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0a7fe552c_generated_82fab6dc.png";
-const POC_GIF = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/110899aec_p60_1.gif";
+const wirelessImg = "/biem-dosyalar/images/0a7fe552c_generated_82fab6dc.png";
+const POC_GIF = "/biem-dosyalar/images/110899aec_p60_1.gif";
 
 const solutions = [
   { icon: Radio, title: "DMR Telsiz Sistemleri", text: "El telsizi, araç telsizi, sabit telsiz, repeater ve IP bağlantılı sistemlerle farklı ölçeklerde DMR haberleşme altyapıları kuruyoruz.", link: "/hytera-telsiz-urunleri?group=DMR+El+Telsizleri" },

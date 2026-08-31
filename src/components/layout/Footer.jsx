@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="mb-4">
               <div className="inline-block bg-white rounded-xl px-3 py-2 shadow-sm border border-border/20">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/91ac19b2e_logo_png.png"
+                  src="/biem-dosyalar/images/91ac19b2e_logo_png.png"
                   alt="BİEM Elektronik"
                   className="h-10 w-auto object-contain"
                 />

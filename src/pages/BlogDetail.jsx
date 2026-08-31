@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import blogPostsData from "@/data/blogPosts.json";
 import SEOHead from "@/components/SEOHead";
 import ReactMarkdown from "react-markdown";
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
@@ -13,28 +12,10 @@ const CATEGORY_LABELS = {
 
 export default function BlogDetail() {
   const { id } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+  const posts = Array.isArray(blogPostsData) ? blogPostsData : [];
+  const post = posts.find(item => String(item?.id) === String(id));
 
-  useEffect(() => {
-    base44.entities.BlogPost.filter({ id })
-      .then(results => {
-        if (results.length > 0) setPost(results[0]);
-        else setNotFound(true);
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center py-32">
-        <div className="w-7 h-7 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  if (notFound || !post) {
+  if (!post) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-32 text-center">
         <p className="text-muted-foreground mb-4">Yazı bulunamadı.</p>

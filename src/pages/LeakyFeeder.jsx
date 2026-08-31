@@ -5,7 +5,7 @@ import PageHero from "@/components/shared/PageHero";
 import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
 
-const mineImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/29143fc36_generated_19c7fa73.png";
+const mineImg = "/biem-dosyalar/images/29143fc36_generated_19c7fa73.png";
 
 const usageAreas = [
   "Maden ocakları", "Metro tünelleri", "Demiryolu tünelleri",

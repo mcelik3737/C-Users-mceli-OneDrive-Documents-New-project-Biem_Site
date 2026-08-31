@@ -5,7 +5,7 @@ import PageHero from "@/components/shared/PageHero";
 import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
 
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
+const railImg = "/biem-dosyalar/images/6f10ee50d_generated_1efba74d.png";
 
 const usageAreas = [
   "Tüneller", "Metro ve demiryolu istasyonları", "Peronlar",
@@ -22,32 +22,32 @@ const scope = [
 const models = [
   {
     name: "Water Resistant Industrial Telephone IP67 Weather Resistant Emergency Telephone",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/d0eb7f9e2_water-resistant-industrial-telephone-ip6723258469081.webp",
+    image: "/biem-dosyalar/images/d0eb7f9e2_water-resistant-industrial-telephone-ip6723258469081.webp",
     url: "https://www.jrtelephone.com/water-resistant-industrial-telephone-ip67"
   },
   {
     name: "Atex Anti-Explosion Proof Emergency Telephone",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/f83eadead_atex-anti-explosion-proof-emergency-telephone40254539954.webp",
+    image: "/biem-dosyalar/images/f83eadead_atex-anti-explosion-proof-emergency-telephone40254539954.webp",
     url: "https://www.jrtelephone.com/atex-anti-explosion-proof-emergency-telephone"
   },
   {
     name: "Cold Rolled Steel Public Telephone For Jail",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/90d0bbafc_20211029145257321d16b45935494ea50ed88408a5ad5f.webp",
+    image: "/biem-dosyalar/images/90d0bbafc_20211029145257321d16b45935494ea50ed88408a5ad5f.webp",
     url: "https://www.jrtelephone.com/cold-rolled-steel-public-telephone-for-jail"
   },
   {
     name: "Bank Service Digital Keys Telephone",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/55ab4e0c5_bank-service-digital-keys-telephone13059388123.webp",
+    image: "/biem-dosyalar/images/55ab4e0c5_bank-service-digital-keys-telephone13059388123.webp",
     url: "https://www.jrtelephone.com/bank-service-digital-keys-telephone"
   },
   {
     name: "Jail Telephone / Inmate Telephone JR201-FK-VC",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0815d61cd_201710191204056393540.jpg",
+    image: "/biem-dosyalar/images/0815d61cd_201710191204056393540.jpg",
     url: "https://www.jrtelephone.com/jr201-fk-voice-control"
   },
   {
     name: "Water Resistant Industrial Telephone IP67 Weather Resistant Emergency Telephone",
-    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/9b8e74419_20211129110700c1ddf2c332d0477fa792ce7b4729058e.webp",
+    image: "/biem-dosyalar/images/9b8e74419_20211129110700c1ddf2c332d0477fa792ce7b4729058e.webp",
     url: "https://www.jrtelephone.com/water-resistant-industrial-telephone-with"
   }
 ];

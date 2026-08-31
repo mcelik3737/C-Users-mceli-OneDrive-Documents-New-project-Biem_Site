@@ -15,7 +15,7 @@ import BodyCameraProductGrid from "@/components/hytera/BodyCameraProductGrid";
 import TetraSystemGrid from "@/components/tetra/TetraSystemGrid";
 import { Radio, Repeat, Monitor, Smartphone, ShieldAlert, Settings, ChevronDown } from "lucide-react";
 
-const wirelessImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/d53175a64_image.png";
+const wirelessImg = "/biem-dosyalar/images/d53175a64_image.png";
 
 const productGroups = [
   { icon: Radio, title: "DMR El Telsizleri", text: "Kompakt, dayanıklı ve yüksek performanslı Hytera DMR el telsizleri.", hasProducts: true },

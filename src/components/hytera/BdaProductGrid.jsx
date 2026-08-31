@@ -3,8 +3,8 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { FileText } from "lucide-react";
 
 const bdaImages = [
-  "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/058c62959_image.png",
-  "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/cef5aa694_image.png",
+  "/biem-dosyalar/images/058c62959_image.png",
+  "/biem-dosyalar/images/cef5aa694_image.png",
 ];
 
 function ImageSlider({ images }) {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import blogPostsData from "@/data/blogPosts.json";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbSEO from "@/components/shared/BreadcrumbSEO";
 import PageHero from "@/components/shared/PageHero";
@@ -26,15 +26,10 @@ const CATEGORY_COLORS = {
 };
 
 export default function Blog() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const posts = Array.isArray(blogPostsData)
+    ? blogPostsData.filter(post => post?.published !== false)
+    : [];
   const [activeCategory, setActiveCategory] = useState("all");
-
-  useEffect(() => {
-    base44.entities.BlogPost.filter({ published: true }, "-created_date", 50)
-      .then(setPosts)
-      .finally(() => setLoading(false));
-  }, []);
 
   const filtered = activeCategory === "all"
     ? posts
@@ -79,13 +74,7 @@ export default function Blog() {
             ))}
           </div>
 
-          {loading && (
-            <div className="flex justify-center py-20">
-              <div className="w-7 h-7 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
-            </div>
-          )}
-
-          {!loading && filtered.length === 0 && (
+          {filtered.length === 0 && (
             <div className="text-center py-20 text-muted-foreground">
               <p className="text-sm">Bu kategoride henüz yayınlanmış yazı bulunmuyor.</p>
             </div>

@@ -6,7 +6,7 @@ import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Cable, Radio, Phone, Music, Camera, Network, Megaphone, Monitor } from "lucide-react";
 
-const mineImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/29143fc36_generated_19c7fa73.png";
+const mineImg = "/biem-dosyalar/images/29143fc36_generated_19c7fa73.png";
 
 const solutions = [
   "Leaky feeder haberleşme sistemleri",

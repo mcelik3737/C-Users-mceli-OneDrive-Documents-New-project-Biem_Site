@@ -2,12 +2,12 @@ import React from "react";
 import { FileText } from "lucide-react";
 
 const products = [
-  { model: "GC550", category: "2K Mini Body Camera", url: "https://www.hytera.com/eu/products/body-camera/gc550", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/002750016_rendition.png" },
-  { model: "GC550 Pro", category: "2K Mini Body Camera", url: "https://www.hytera.com/eu/products/body-camera/gc550-pro", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/ff9d416ad_rendition.png" },
-  { model: "SC580", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc580", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/7dc0766bc_rendition.png" },
-  { model: "SC700", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc700", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/5b136dff6_rendition.png" },
-  { model: "SC780", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc780", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/319c1222a_rendition.png" },
-  { model: "SC880", category: "Smart 5G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc880", img: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/4797cda61_rendition.png" },
+  { model: "GC550", category: "2K Mini Body Camera", url: "https://www.hytera.com/eu/products/body-camera/gc550", img: "/biem-dosyalar/images/002750016_rendition.png" },
+  { model: "GC550 Pro", category: "2K Mini Body Camera", url: "https://www.hytera.com/eu/products/body-camera/gc550-pro", img: "/biem-dosyalar/images/ff9d416ad_rendition.png" },
+  { model: "SC580", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc580", img: "/biem-dosyalar/images/7dc0766bc_rendition.png" },
+  { model: "SC700", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc700", img: "/biem-dosyalar/images/5b136dff6_rendition.png" },
+  { model: "SC780", category: "Smart 4G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc780", img: "/biem-dosyalar/images/319c1222a_rendition.png" },
+  { model: "SC880", category: "Smart 5G Body Camera", url: "https://www.hytera.com/eu/products/body-camera/sc880", img: "/biem-dosyalar/images/4797cda61_rendition.png" },
 ];
 
 function CameraIcon() {

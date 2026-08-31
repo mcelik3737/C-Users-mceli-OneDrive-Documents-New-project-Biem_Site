@@ -7,7 +7,7 @@ export default function PartnerBrandSection() {
       <div className="max-w-5xl mx-auto px-4 lg:px-6">
         <div className="rounded-2xl border border-border/50 bg-card/40 p-6 lg:p-10 flex flex-col md:flex-row items-center gap-8">
           <img
-            src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/104a38333_BM-SARJ-LOGO-1200.png"
+            src="/biem-dosyalar/images/104a38333_BM-SARJ-LOGO-1200.png"
             alt="BM Şarj"
             className="h-16 w-auto object-contain shrink-0"
           />

@@ -6,8 +6,8 @@ import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const bdaImages = [
-  "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/058c62959_image.png",
-  "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/cef5aa694_image.png",
+  "/biem-dosyalar/images/058c62959_image.png",
+  "/biem-dosyalar/images/cef5aa694_image.png",
 ];
 
 function BdaImageSlider() {
@@ -29,7 +29,7 @@ function BdaImageSlider() {
   );
 }
 
-const dasImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png";
+const dasImg = "/biem-dosyalar/images/b89abb303_generated_fce2d3bb.png";
 
 const products = [
   "Fiber RF repeater", "Off-air BDA", "Bi-directional amplifier",
@@ -100,14 +100,14 @@ export default function RfRepeater() {
                   <span key={i} className="text-[11px] px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20">{f}</span>
                 ))}
               </div>
-              <a href="https://media.base44.com/files/public/6a0f643fac0d957e314ae3c0/f979725c5_BM_D30U30_24_F4.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="/biem-dosyalar/files/f979725c5_BM_D30U30_24_F4.pdf" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:underline">
                 📄 Teknik Veri Sayfasını İndir (PDF)
               </a>
             </div>
             <div className="order-1 lg:order-2 space-y-4">
               <div className="rounded-xl overflow-hidden border border-border/40 bg-white/5 flex items-center justify-center p-4">
-                <img src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/d56166443_bda_png_bm.png" alt="TETRA/TETRAPOL 400 MHz RF Repeater Unit" className="w-full object-contain max-h-72" />
+                <img src="/biem-dosyalar/images/d56166443_bda_png_bm.png" alt="TETRA/TETRAPOL 400 MHz RF Repeater Unit" className="w-full object-contain max-h-72" />
               </div>
               {/* Specs table */}
               <div className="rounded-xl border border-border/40 bg-card/30 p-4">
@@ -151,7 +151,7 @@ export default function RfRepeater() {
             <div className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
               <div className="bg-white/5 flex items-center justify-center p-6 h-52">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/1fb30f949_ChatGPTImage20Haz202619_50_09.png"
+                  src="/biem-dosyalar/images/1fb30f949_ChatGPTImage20Haz202619_50_09.png"
                   alt="RF Splitter"
                   className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300"
                 />
@@ -169,7 +169,7 @@ export default function RfRepeater() {
             <div className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
               <div className="bg-white/5 flex items-center justify-center p-6 h-52">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/1abe360f5_ChatGPTImage20Haz202619_50_00.png"
+                  src="/biem-dosyalar/images/1abe360f5_ChatGPTImage20Haz202619_50_00.png"
                   alt="RF Coupler"
                   className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300"
                 />
@@ -187,7 +187,7 @@ export default function RfRepeater() {
             <div className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
               <div className="bg-white/5 flex items-center justify-center p-6 h-52">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/c04154715_ChatGPTImage20Haz202619_53_32.png"
+                  src="/biem-dosyalar/images/c04154715_ChatGPTImage20Haz202619_53_32.png"
                   alt="RF Tapper"
                   className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300"
                 />
@@ -205,7 +205,7 @@ export default function RfRepeater() {
             <div className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
               <div className="bg-white/5 flex items-center justify-center p-6 h-52">
                 <img
-                  src="https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/ced3e6aca_ChatGPTImage20Haz202619_53_32.png"
+                  src="/biem-dosyalar/images/ced3e6aca_ChatGPTImage20Haz202619_53_32.png"
                   alt="Hybrid Coupler"
                   className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300"
                 />
