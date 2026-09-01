@@ -50,10 +50,127 @@ jobs:
           test -d dist/assets/images
           test -d dist/assets/docs
 
+      - name: Prepare complete handoff package
+        shell: bash
+        run: |
+          rm -rf handoff
+          mkdir -p handoff/BIEM-NATRO-YAYIN handoff/BIEM-KAYNAK handoff/ARSIV-ESKI
+
+          # Natro'ya doğrudan yüklenecek üretim çıktısı.
+          cp -a dist/. handoff/BIEM-NATRO-YAYIN/
+
+          # Aktif, düzenlenebilir proje kaynağı. node_modules ve dist dahil edilmez.
+          rsync -a ./ handoff/BIEM-KAYNAK/ \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            --exclude='handoff' \
+            --exclude='base44' \
+            --exclude='files.zip' \
+            --exclude='indir-windows.ps1' \
+            --exclude='indir-mac.sh'
+
+          # Kurtarma döneminden kalan Base44 / indirme dosyaları ayrı arşivde tutulur.
+          if [ -d base44 ]; then cp -a base44 handoff/ARSIV-ESKI/; fi
+          for f in files.zip indir-windows.ps1 indir-mac.sh; do
+            if [ -f "$f" ]; then cp -a "$f" handoff/ARSIV-ESKI/; fi
+          done
+
+          cat > handoff/OKU-BENI.txt <<'EOF'
+          BIEM ELEKTRONIK WEB SITESI - TAM TESLIM PAKETI
+
+          1) BIEM-NATRO-YAYIN
+             Natro hosting web kök dizinine yüklenecek hazır üretim dosyalarıdır.
+             .htaccess, index.html, SEO HTML girişleri, assets, PDF'ler ve contact.php dahildir.
+
+          2) BIEM-KAYNAK
+             Düzenlenebilir React + Vite kaynak projedir.
+             Windows'ta CALISTIR-WINDOWS.bat ile geliştirme önizlemesini açabilirsiniz.
+             Manuel: npm install -> npm run dev
+             Üretim: npm run build
+
+          3) ARSIV-ESKI
+             Base44 kurtarma dosyaları ve eski indirme scriptleri. Aktif sitede kullanılmaz.
+
+          ONEMLI:
+          BIEM-NATRO-YAYIN/index.html dosyasini file:// ile cift tiklayarak acmayin.
+          Mutlak /assets yollari bir web sunucusu gerektirir. Yerel onizleme icin
+          bu klasordeki ONIZLE-WINDOWS.bat dosyasini kullanin.
+          EOF
+
+          cat > handoff/ONIZLE-WINDOWS.bat <<'EOF'
+          @echo off
+          setlocal
+          cd /d "%~dp0"
+          where py >nul 2>nul
+          if %errorlevel%==0 (
+            start "BIEM Preview Server" cmd /k "py -m http.server 8080 --directory BIEM-NATRO-YAYIN"
+            timeout /t 2 /nobreak >nul
+            start "" http://127.0.0.1:8080/
+            exit /b 0
+          )
+          where python >nul 2>nul
+          if %errorlevel%==0 (
+            start "BIEM Preview Server" cmd /k "python -m http.server 8080 --directory BIEM-NATRO-YAYIN"
+            timeout /t 2 /nobreak >nul
+            start "" http://127.0.0.1:8080/
+            exit /b 0
+          )
+          echo Python bulunamadi. BIEM-KAYNAK klasorune girip CALISTIR-WINDOWS.bat dosyasini kullanin.
+          pause
+          EOF
+
+          cat > handoff/BIEM-KAYNAK/CALISTIR-WINDOWS.bat <<'EOF'
+          @echo off
+          setlocal
+          cd /d "%~dp0"
+          where npm >nul 2>nul
+          if errorlevel 1 (
+            echo Node.js / npm bulunamadi. Node.js 22 veya 24 kurun.
+            pause
+            exit /b 1
+          )
+          if not exist node_modules (
+            echo Bagimliliklar kuruluyor...
+            call npm install
+            if errorlevel 1 exit /b 1
+          )
+          start "BIEM Vite" cmd /k "npm run dev -- --host 127.0.0.1"
+          timeout /t 3 /nobreak >nul
+          start "" http://127.0.0.1:5173/
+          EOF
+
+          # Handoff bütünlüğü kontrolü.
+          test -f handoff/BIEM-NATRO-YAYIN/.htaccess
+          test -f handoff/BIEM-NATRO-YAYIN/index.html
+          test -f handoff/BIEM-KAYNAK/src/App.jsx
+          test -f handoff/BIEM-KAYNAK/package.json
+          test -d handoff/BIEM-KAYNAK/biem-dosyalar/images
+          test -f handoff/ONIZLE-WINDOWS.bat
+
       - name: Upload Natro deployment package
         uses: actions/upload-artifact@v4
         with:
-          name: biem-natro-dist
-          path: dist/
+          name: BIEM-NATRO-YAYIN
+          path: handoff/BIEM-NATRO-YAYIN/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload complete source package
+        uses: actions/upload-artifact@v4
+        with:
+          name: BIEM-KAYNAK
+          path: handoff/BIEM-KAYNAK/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload complete handoff package
+        uses: actions/upload-artifact@v4
+        with:
+          name: BIEM-TAM-TESLIM
+          path: handoff/
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
