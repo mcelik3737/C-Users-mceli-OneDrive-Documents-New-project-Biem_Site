@@ -1,68 +1,295 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Building2,
+  Cable,
+  CheckCircle2,
+  Factory,
+  Map,
+  Mountain,
+  Radio,
+  Shield,
+  Signal,
+  TrainFront,
+  Wifi,
+} from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbSEO from "@/components/shared/BreadcrumbSEO";
 import PageHero from "@/components/shared/PageHero";
 import CTASection from "@/components/shared/CTASection";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { Wifi, Cable, Radio, Shield, Signal, Globe, Mountain, Settings } from "lucide-react";
 
-const dasImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png";
+const heroImage = "/assets/images/b89abb303_generated_fce2d3bb.png";
 
-const solutions = [
-  { icon: Wifi, title: "Fiber RF Repeater / BDA", text: "Geniş alan, tünel, maden ve raylı sistem projelerinde merkezi birim ve uzak birimler üzerinden RF sinyal dağıtımı sağlayan fiber tabanlı çözümler." },
-  { icon: Radio, title: "Off-Air BDA Sistemleri", text: "Dış ortamdan alınan RF sinyalinin bina, tünel veya kapalı alana taşınması için off-air BDA sistemleri." },
-  { icon: Cable, title: "Leaky Feeder Sistemleri", text: "Tünel, maden ve kapalı geçiş alanlarında RF sinyalin kontrollü yayılması için leaky feeder kablo ve pasif ekipman çözümleri." },
-  { icon: Shield, title: "Public Safety DAS", text: "Polis, itfaiye ve acil durum birimleri için bina içi ve kapalı alanlarda güvenilir public safety haberleşme altyapıları." },
-  { icon: Signal, title: "GSM / LTE / 5G DAS", text: "Operatör sinyallerinin bina içi, kampüs, tünel veya büyük yapılarda dağıtılması için GSM/LTE/5G kapsama çözümleri." },
-  { icon: Globe, title: "Wi-Fi ve Kablosuz Altyapı", text: "Endüstriyel tesisler, kampüsler, oteller, depolar ve kapalı alanlar için Wi-Fi kapsama çözümleri." },
-  { icon: Mountain, title: "Maden ve Tünel Haberleşmesi", text: "Yeraltı madenleri ve tünel sahalarında RF kapsama, telsiz haberleşme ve acil durum iletişim çözümleri." },
-  { icon: Settings, title: "Özel Frekans RF Çözümleri", text: "Projeye özel imalat ve tasarım hizmeti sunulur. Outdoor ve Indoor RF Kapsama (RF Coverage) analizleri doğrultusunda ürünler belirlenerek projelendirilir. Tünel, kablo galerileri, su tünelleri, depolar ve şehir kapsamaları için stok ürünlerimiz veya projeye özel imalat çözümlerimiz mevcuttur." },
+const solutionFamilies = [
+  {
+    icon: Radio,
+    title: "RF Repeater / BDA",
+    text: "TETRA, DMR, UHF/VHF ve kritik haberleşme frekanslarında off-air veya kontrollü RF kaynağını servis alanına taşır.",
+    path: "/rf-repeater-bda-urunleri",
+    tag: "AKTİF RF",
+  },
+  {
+    icon: Cable,
+    title: "Leaky Feeder",
+    text: "Tünel ve yeraltı hatlarında koaksiyel kabloyu dağıtılmış anten gibi kullanarak hat boyunca kontrollü RF yayılımı sağlar.",
+    path: "/leaky-feeder-sistemleri",
+    tag: "DAĞITILMIŞ RF",
+  },
+  {
+    icon: Mountain,
+    title: "Maden / Tünel Haberleşmesi",
+    text: "RF kapsama, telsiz altyapısı, acil telefon ve yeraltı haberleşme bileşenlerini tek saha mimarisinde birleştirir.",
+    path: "/maden-tunel-haberlesmesi",
+    tag: "YERALTI",
+  },
+  {
+    icon: TrainFront,
+    title: "Raylı Sistem RF Kapsama",
+    text: "Metro, demiryolu, istasyon, depo ve tünellerde telsiz, public safety ve operasyon haberleşmesi için kapsama altyapısı.",
+    path: "/rayli-sistem-cozumleri",
+    tag: "RAYLI SİSTEM",
+  },
+  {
+    icon: Shield,
+    title: "Public Safety DAS",
+    text: "Polis, itfaiye ve acil durum ekiplerinin bina içi ve kapalı alan kritik haberleşmesini destekleyen RF dağıtım çözümleri.",
+    path: "/iletisim",
+    tag: "ACİL DURUM",
+  },
+  {
+    icon: Wifi,
+    title: "Indoor RF / Wi-Fi / Hücresel",
+    text: "Bina, kampüs, otopark ve endüstriyel alanlarda RF ölçümü, anten yerleşimi ve dağıtım topolojisi planlaması.",
+    path: "/iletisim",
+    tag: "INDOOR",
+  },
 ];
 
-const usageAreas = [
-  "Tüneller", "Maden sahaları", "Metro ve raylı sistem hatları",
-  "Büyük binalar", "Otoparklar", "Endüstriyel tesisler",
-  "Alışveriş merkezleri", "Oteller", "Kampüsler", "Kamu güvenliği alanları",
+const workflow = [
+  {
+    no: "01",
+    title: "Saha verisi ve hedef kapsama",
+    text: "Frekans bandı, kullanıcı profili, mevcut RF seviyesi, mimari/topografya ve hedef hizmet seviyesi tanımlanır.",
+  },
+  {
+    no: "02",
+    title: "Propagasyon ve RF link budget",
+    text: "Anten kazançları, feeder kayıpları, pasif eleman insertion loss değerleri ve repeater güç seviyeleri hesaplanır.",
+  },
+  {
+    no: "03",
+    title: "Sistem mimarisi",
+    text: "Off-air BDA, fiber repeater, leaky feeder veya anten dağıtım yapısı; saha şartlarına göre birlikte veya ayrı seçilir.",
+  },
+  {
+    no: "04",
+    title: "Saha testi ve optimizasyon",
+    text: "Kurulum sonrası RSSI/field strength, uplink dengesi, izolasyon ve kapsama boşlukları ölçülerek sistem optimize edilir.",
+  },
+];
+
+const coverageGallery = [
+  { src: "/assets/images/a00ed39ea_ento-Kopya.png", label: "Outdoor RF kapsama / şehir propagasyon analizi" },
+  { src: "/assets/images/b980529e5_8e3b7e13-1bd3-460a-a5ea-b31c20210394.png", label: "Indoor DAS / bina içi kapsama planı" },
+  { src: "/assets/images/ae6efcdbd_kapsama.png", label: "Şehir içi RF kapsama analizi" },
+  { src: "/assets/images/4691218c2_U26_KAPSAMA.png", label: "Outdoor RF propagasyon ve saha analizi" },
+  { src: "/assets/images/9f07ca3fd_kapsama.png", label: "Endüstriyel saha kapsama haritası" },
+];
+
+const sectors = [
+  { icon: Mountain, title: "Tünel ve Maden", text: "Leaky feeder, BDA, repeater ve yeraltı RF dağıtımı" },
+  { icon: TrainFront, title: "Metro ve Demiryolu", text: "Tünel, istasyon, depo ve işletme sahası kapsaması" },
+  { icon: Building2, title: "Bina ve Otopark", text: "Indoor RF, public safety ve kapalı alan kapsama" },
+  { icon: Factory, title: "Endüstri ve Enerji", text: "Fabrika, RES/GES, liman ve büyük saha haberleşmesi" },
 ];
 
 export default function DasRfSolutions() {
   return (
     <>
       <SEOHead
-        title="DAS / RF Kapsama Çözümleri | Tünel Telsiz ve Acil Durum Haberleşme Altyapısı"
-        description="Bina içi, tünel, maden ve metro sahalarında tünel telsiz, acil durum haberleşme ve afet haberleşme için DAS, BDA, RF repeater, fiber repeater, leaky feeder ve GSM/LTE kapsama çözümleri."
+        title="DAS ve RF Kapsama Çözümleri | BDA, Repeater, Leaky Feeder"
+        description="BİEM; tünel, maden, metro, bina ve endüstriyel tesislerde RF kapsama analizi, DAS, BDA, fiber repeater, leaky feeder ve anten dağıtım sistemlerini mühendislik tabanlı olarak tasarlar ve uygular."
         canonical="/das-rf-kapsama-cozumleri"
-        keywords="DAS, distributed antenna system, RF kapsama, BDA, bi-directional amplifier, RF repeater, fiber repeater, off-air BDA, leaky feeder, public safety DAS, GSM kapsama, LTE kapsama, 5G DAS, Wi-Fi kapsama, bina içi kapsama, tünel kapsama, tünel telsiz, maden kapsama, maden telsiz, acil durum haberleşme DAS, afet haberleşme, otopark kapsama, endüstriyel kapsama, özel frekans RF, RF coverage analizi, indoor kapsama, outdoor kapsama, kapalı alan sinyal, sinyal güçlendirme, DAS repeater, Commscope DAS, Andrew BDA, RFS RF, Kathrein anten, Huawei DAS, Nokia DAS, Ericsson DAS, Rosenberger DAS, DAS sistemi fiyat, RF repeater kurulum, BDA sistem kurulumu, tünel RF tasarımı, indoor DAS planlama"
+        keywords="DAS, RF kapsama, RF coverage, BDA, RF repeater, fiber repeater, off-air BDA, leaky feeder, public safety DAS, tünel RF kapsama, maden haberleşme, indoor RF, RF propagasyon, RF link budget"
       />
       <BreadcrumbSEO
         items={[
           { name: "Ana Sayfa", url: "https://www.biemelektronik.com/" },
-          { name: "DAS / RF Kapsama Çözümleri", url: "https://www.biemelektronik.com/das-rf-kapsama-cozumleri" },
+          { name: "DAS / RF Kapsama", url: "https://www.biemelektronik.com/das-rf-kapsama-cozumleri" },
         ]}
       />
       <PageHero
-        title="DAS / RF Kapsama Çözümleri"
-        subtitle="Bina içi, tünel, maden, metro, fabrika, otopark ve büyük kapalı alanlarda RF kapsama sorunlarına yönelik DAS, BDA, RF repeater, fiber repeater ve leaky feeder çözümleri sunuyoruz."
-        image={dasImg}
+        title="DAS / RF Kapsama Mühendisliği"
+        subtitle="Tünel, maden, metro, bina ve endüstriyel sahalarda kapsama sorununu yalnızca cihaz seçerek değil; RF ölçümü, propagasyon, link budget ve saha optimizasyonuyla çözüyoruz."
+        image={heroImage}
         buttons={[
-          { label: "DAS/RF İçin Teklif Alın", to: "/iletisim" },
-          { label: "Saha Keşfi Talep Edin", to: "/iletisim", variant: "outline" },
+          { label: "RF Keşif / Teklif Talebi", to: "/iletisim" },
+          { label: "RF Repeater / BDA", to: "/rf-repeater-bda-urunleri", variant: "outline" },
         ]}
       />
 
+      <section className="py-14 lg:py-20 border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-start">
+            <div className="lg:sticky lg:top-28">
+              <span className="text-xs font-mono font-semibold tracking-[0.18em] text-primary uppercase">KAPSAMA TASARIMI</span>
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight mt-3 mb-5">Önce RF problemi tanımlarız, sonra sistemi seçeriz.</h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">
+                Aynı saha için repeater, fiber dağıtım veya leaky feeder çözümlerinin yatırım maliyeti ve saha performansı farklı olabilir. Doğru mimari; frekans, mesafe, kablo güzergâhı, mevcut sinyal ve hedef servis seviyesi birlikte değerlendirildiğinde ortaya çıkar.
+              </p>
+              <div className="flex items-start gap-3 p-4 rounded-xl border border-primary/15 bg-primary/[0.04]">
+                <Map className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Outdoor ve indoor kapsama analizlerini, saha keşfi ve kurulum sonrası ölçümlerle birlikte değerlendiriyoruz.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {workflow.map((step) => (
+                <article key={step.no} className="relative p-5 lg:p-6 rounded-2xl border border-border/50 bg-card/40 hover:border-primary/30 transition-colors">
+                  <span className="text-3xl font-bold text-primary/10 absolute right-5 top-3">{step.no}</span>
+                  <div className="w-8 h-1 rounded-full bg-primary mb-5" />
+                  <h3 className="font-semibold text-foreground mb-2 pr-10">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 bg-secondary/20 border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <SectionHeader
+            tag="ÇÖZÜM AİLELERİ"
+            title="Sahaya göre seçilen RF kapsama mimarileri"
+            subtitle="Aktif RF, pasif dağıtım ve saha haberleşme bileşenlerini tek bir kapsama planı altında birleştiriyoruz."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {solutionFamilies.map((solution) => {
+              const Icon = solution.icon;
+              return (
+                <Link
+                  key={solution.title}
+                  to={solution.path}
+                  className="group p-6 rounded-2xl border border-border/50 bg-card/40 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-[10px] font-mono tracking-widest text-primary/60">{solution.tag}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{solution.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">{solution.text}</p>
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary">
+                    İncele <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div>
+              <span className="text-xs font-mono font-semibold tracking-[0.18em] text-primary uppercase">PROJEYE ÖZEL RF</span>
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight mt-3 mb-5">Hazır ürün ile proje özel üretimi aynı sistemde değerlendirebiliriz.</h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                Frekans planı, duplex aralığı, taşıyıcı sayısı, gerekli çıkış gücü veya mekanik şartlar standart ürünle karşılanmadığında proje özel RF repeater/BDA ve filtreleme çözümleri değerlendirilebilir.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Frekans / bant planına göre ürün seçimi",
+                  "Donor-servis anten izolasyonu değerlendirmesi",
+                  "Kablo ve pasif RF kayıplarının hesaplanması",
+                  "Uplink / downlink güç dengesinin planlanması",
+                  "Uzaktan alarm ve izleme ihtiyacının tanımlanması",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Link to="/rf-repeater-bda-urunleri" className="inline-flex items-center gap-2 mt-7 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                RF repeater / BDA teknik sayfası <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="rounded-2xl border border-border/50 bg-card/30 p-6 lg:p-8">
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  [Signal, "Aktif RF", "Repeater / BDA"],
+                  [Cable, "Dağıtım", "Leaky / Koaksiyel"],
+                  [Radio, "Servis", "DMR / TETRA / RF"],
+                  [Shield, "Kritik", "Public Safety"],
+                ].map(([Icon, label, value]) => (
+                  <div key={label} className="min-h-36 rounded-xl border border-primary/10 bg-primary/[0.04] p-4 flex flex-col justify-between">
+                    <Icon className="w-5 h-5 text-primary" />
+                    <div>
+                      <span className="block text-[10px] font-mono uppercase tracking-wider text-primary/60 mb-1">{label}</span>
+                      <strong className="text-sm text-foreground">{value}</strong>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 bg-secondary/20 border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <SectionHeader
+            tag="RF KAPSAMA PLANLAMA"
+            title="Propagasyon ve kapsama analizi örnekleri"
+            subtitle="Saha tasarım kararlarını yalnızca tahmine değil; arazi, mimari, frekans ve anten parametreleriyle oluşturulan RF analizlerine dayandırıyoruz."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {coverageGallery.map((item, index) => (
+              <figure
+                key={item.src}
+                className={`group rounded-2xl border border-border/50 bg-card/30 overflow-hidden hover:border-primary/30 transition-colors ${index === 0 ? "lg:col-span-2" : ""}`}
+              >
+                <div className={`bg-black/25 p-3 flex items-center justify-center ${index === 0 ? "h-72" : "h-60"}`}>
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 border-t border-border/30 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Map className="w-3.5 h-3.5 text-primary shrink-0" />
+                  {item.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <SectionHeader tag="ÇÖZÜMLER" title="DAS / RF Kapsama Çözüm Alanlarımız" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {solutions.map((s, i) => {
-              const Icon = s.icon;
+          <SectionHeader
+            tag="UYGULAMA ALANLARI"
+            title="Kritik haberleşmenin kapsama gerektirdiği sahalar"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {sectors.map((sector) => {
+              const Icon = sector.icon;
               return (
-                <div key={i} className="p-5 rounded-xl border border-border/50 bg-card/50 hover:border-primary/20 transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{s.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{s.text}</p>
+                <div key={sector.title} className="p-5 rounded-2xl border border-border/50 bg-card/30">
+                  <Icon className="w-5 h-5 text-primary mb-5" />
+                  <h3 className="font-semibold text-foreground mb-2">{sector.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{sector.text}</p>
                 </div>
               );
             })}
@@ -70,82 +297,9 @@ export default function DasRfSolutions() {
         </div>
       </section>
 
-      {/* BİEM own products highlight */}
-      <section className="py-16 lg:py-20 bg-secondary/30 border-y border-border/30">
-        <div className="max-w-4xl mx-auto px-4 lg:px-6 text-center">
-          <span className="text-xs font-mono font-semibold tracking-widest text-primary uppercase mb-3 inline-block">PROJEYE ÖZEL</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Projeye Özel RF Repeater ve BDA Çözümleri</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            BİEM, kendi geliştirdiği RF repeater/BDA ürünleri ve farklı marka ürün seçenekleriyle sahaya özel kapsama çözümleri oluşturur. Tünel, maden, bina içi ve endüstriyel alanlarda frekans, kapsama ve sistem mimarisi ihtiyacına göre çözüm sunar.
-          </p>
-        </div>
-      </section>
-
-      {/* RF Kapsama Planlama */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <SectionHeader
-            tag="PLANLAMA"
-            title="RF Kapsama Planlama"
-            subtitle="Lisanslı propagasyon yazılımları ile mühendislik tabanlı RF kapsama planlaması — keşiften devreye almaya kadar."
-          />
-
-          {/* Intro text */}
-          <div className="max-w-3xl space-y-4 mb-12">
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Biem Teknoloji Elektronik, telsiz haberleşme, DAS, BDA, repeater ve indoor/outdoor RF kapsama projelerinde lisanslı propagasyon yazılımları ile mühendislik tabanlı planlama hizmeti sunar.
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Proje öncesinde arazi yapısı, bina mimarisi, anten lokasyonları, frekans bandı, cihaz çıkış gücü ve kablo kayıpları analiz edilerek kapsama haritaları oluşturulur. Böylece cihaz yerleşimi optimum şekilde belirlenir, kapsama boşlukları önceden tespit edilir ve müşteriye daha verimli bir yatırım planı sunulur.
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Outdoor saha kapsaması, maden ve endüstriyel tesis haberleşmesi, şehir içi RF analizleri, indoor DAS planlama ve bina içi anten dağıtım projelerinde Biem Teknoloji Elektronik, keşiften devreye almaya kadar tüm süreçlerde teknik destek sağlar.
-            </p>
-          </div>
-
-          {/* Image gallery */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/a00ed39ea_ento-Kopya.png", label: "Outdoor RF Kapsama Haritası — İstanbul" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b980529e5_8e3b7e13-1bd3-460a-a5ea-b31c20210394.png", label: "Indoor DAS Kapsama Haritası" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/ae6efcdbd_kapsama.png", label: "Şehir İçi RF Kapsama Analizi — İstanbul" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/4691218c2_U26_KAPSAMA.png", label: "Outdoor RF Propagasyon Analizi" },
-              { src: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/9f07ca3fd_kapsama.png", label: "Endüstriyel Saha Kapsama Haritası — Milas" },
-            ].map((img, i) => (
-              <div key={i} className="rounded-xl border border-border/40 bg-card/30 overflow-hidden group hover:border-primary/20 transition-all duration-300">
-                <div className="bg-black/40 flex items-center justify-center p-3 h-56">
-                  <img
-                    src={img.src}
-                    alt={img.label}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300"
-                  />
-                </div>
-                <div className="px-3 py-2.5 border-t border-border/20">
-                  <p className="text-xs text-muted-foreground font-mono tracking-wide">{img.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Usage areas */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <SectionHeader tag="KULLANIM ALANLARI" title="DAS / RF Kapsama Kullanım Alanları" />
-          <div className="flex flex-wrap justify-center gap-3">
-            {usageAreas.map((area, i) => (
-              <span key={i} className="px-4 py-2.5 text-sm text-muted-foreground border border-border/50 bg-card/50 rounded-lg hover:border-primary/20 hover:text-foreground transition-colors">
-                {area}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection
-        title="Kapsama sorunu yaşadığınız alanı birlikte analiz edelim."
-        subtitle="Sahanıza uygun RF, BDA veya DAS çözümünü projelendirelim."
+        title="Kapsama problemini saha verisiyle birlikte çözelim."
+        subtitle="Frekans bandı, saha planı, mevcut RF seviyesi ve hedef kullanım senaryosunu paylaşın; uygun DAS / BDA / repeater / leaky feeder mimarisini belirleyelim."
       />
     </>
   );

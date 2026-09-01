@@ -1,20 +1,21 @@
 {
-  "name": "base44-app",
+  "name": "biem-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "assets:sync": "node scripts/sync-public-assets.mjs",
+    "predev": "npm run assets:sync",
     "dev": "vite",
+    "prebuild": "npm run assets:sync",
     "build": "vite build",
+    "postbuild": "node scripts/generate-static-routes.mjs",
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc -p ./jsconfig.json",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@base44/sdk": "^0.8.44",
-    "@base44/vite-plugin": "^1.0.33",
-    "@emailjs/browser": "^4.4.1",
     "@hello-pangea/dnd": "^17.0.0",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",

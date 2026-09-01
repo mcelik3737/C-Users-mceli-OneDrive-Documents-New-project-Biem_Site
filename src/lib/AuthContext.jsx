@@ -1,35 +1,23 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { base44 } from "@/api/base44Client";
+import { createContext, useContext, useMemo } from "react";
 
-const AuthContext = createContext(null);
+const publicAuth = {
+  user: null,
+  isAuthenticated: false,
+  isLoadingAuth: false,
+  isLoadingPublicSettings: false,
+  authError: null,
+  setAuthError: () => {},
+  logout: async () => {},
+  navigateToLogin: () => { window.location.href = "/"; },
+};
+
+const AuthContext = createContext(publicAuth);
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [isLoadingAuth, setIsLoadingAuth] = useState(true);
-  const [authError, setAuthError] = useState(null);
-
-  useEffect(() => {
-    base44.auth.me()
-      .then(setUser)
-      .catch(() => setUser(null))
-      .finally(() => setIsLoadingAuth(false));
-  }, []);
-
-  const value = useMemo(() => ({
-    user,
-    isAuthenticated: Boolean(user),
-    isLoadingAuth,
-    isLoadingPublicSettings: false,
-    authError,
-    setAuthError,
-    logout: () => base44.auth.logout().finally(() => setUser(null)),
-    navigateToLogin: () => { window.location.href = "/login"; },
-  }), [user, isLoadingAuth, authError]);
-
+  const value = useMemo(() => publicAuth, []);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export function useAuth() {
-  return useContext(AuthContext);
+  return useContext(AuthContext) || publicAuth;
 }
-

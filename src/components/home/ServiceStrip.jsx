@@ -1,58 +1,62 @@
 import React from "react";
-import { Search, PenTool, Package, Wrench } from "lucide-react";
+import { ClipboardCheck, RadioTower, Search, Wrench } from "lucide-react";
 
 const services = [
   {
     icon: Search,
-    title: "Keşif ve Analiz",
-    text: "Saha koşullarını, kapsama ihtiyacını, kullanıcı yoğunluğunu ve altyapı durumunu teknik olarak analiz ediyoruz.",
+    step: "01",
+    title: "Keşif & İhtiyaç Analizi",
+    text: "Saha geometrisi, kapsama problemi, frekans yapısı, kullanıcı yoğunluğu ve mevcut altyapıyı teknik olarak değerlendiriyoruz.",
   },
   {
-    icon: PenTool,
-    title: "Projelendirme",
-    text: "Telsiz, RF, fiber, network, anons ve DAS sistemlerini projeye uygun şekilde tasarlıyoruz.",
-  },
-  {
-    icon: Package,
-    title: "Ürün Tedariği",
-    text: "Hytera, J&R, RF repeater, BDA, leaky feeder ve network ekipmanlarını projeye uygun temin ediyoruz.",
+    icon: RadioTower,
+    step: "02",
+    title: "RF & Sistem Tasarımı",
+    text: "Link budget, kapsama mimarisi, aktif/pasif RF bileşenleri, network, fiber ve güç altyapısını proje koşullarına göre tasarlıyoruz.",
   },
   {
     icon: Wrench,
-    title: "Kurulum ve Bakım",
-    text: "Montaj, programlama, test, devreye alma, eğitim ve periyodik bakım hizmetleri sunuyoruz.",
+    step: "03",
+    title: "Entegrasyon & Kurulum",
+    text: "Telsiz, repeater/BDA, leaky feeder, anten, acil telefon ve ilgili saha sistemlerinin montaj ve entegrasyonunu yürütüyoruz.",
+  },
+  {
+    icon: ClipboardCheck,
+    step: "04",
+    title: "Test, Kabul & Teknik Destek",
+    text: "Kapsama ve fonksiyon testleri, devreye alma, kullanıcı eğitimi, kabul dokümantasyonu ve sürdürülebilir teknik destek sağlıyoruz.",
   },
 ];
 
 export default function ServiceStrip() {
   return (
-    <section className="relative py-16 lg:py-20 border-b border-border/30">
-      <div className="max-w-7xl mx-auto px-4 lg:px-6">
-        <div className="text-center mb-10">
-          <span className="text-xs font-mono font-semibold tracking-widest text-primary uppercase">HİZMET MODELİMİZ</span>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mt-3">
-            Uçtan Uca Mühendislik ve Saha Uygulama Hizmeti
+    <section className="relative py-16 lg:py-24 border-b border-border/30 bg-[#0a1423] overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[linear-gradient(90deg,transparent_49.5%,rgba(0,207,232,.6)_50%,transparent_50.5%)] bg-[length:72px_72px]" />
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-6">
+        <div className="max-w-3xl mb-10 lg:mb-12">
+          <span className="text-[10px] font-mono font-semibold tracking-[0.18em] text-primary uppercase">Mühendislik Sürecimiz</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground mt-3">
+            Ürün tedarikinden önce doğru sistem mimarisini kuruyoruz.
           </h2>
+          <p className="mt-4 text-sm lg:text-base text-muted-foreground leading-7">
+            Kritik haberleşme projelerinde her saha farklıdır. Bu nedenle süreci keşif, RF tasarım, entegrasyon ve ölçülebilir kabul adımlarıyla yönetiyoruz.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div key={i} className="group relative p-6 rounded-xl border border-border/50 bg-card/50 hover:border-primary/30 transition-all duration-300">
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="w-11 h-11 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {services.map(({ icon: Icon, step, title, text }) => (
+            <article key={step} className="group relative min-h-[250px] p-6 rounded-xl border border-white/[0.07] bg-[#0e1b2c]/80 hover:border-primary/25 transition-colors">
+              <div className="flex items-start justify-between gap-4 mb-8">
+                <div className="w-11 h-11 rounded-lg border border-primary/20 bg-primary/[0.07] flex items-center justify-center group-hover:bg-primary/[0.12] transition-colors">
+                  <Icon className="w-5 h-5 text-primary" />
                 </div>
-                {/* Step number */}
-                <span className="absolute top-4 right-4 text-xs font-mono text-border">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[11px] font-mono tracking-[0.16em] text-slate-600">STEP / {step}</span>
               </div>
-            );
-          })}
+              <h3 className="text-lg font-bold text-foreground mb-3">{title}</h3>
+              <p className="text-sm text-muted-foreground leading-6">{text}</p>
+              <div className="absolute left-6 right-6 bottom-0 h-px bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </article>
+          ))}
         </div>
       </div>
     </section>

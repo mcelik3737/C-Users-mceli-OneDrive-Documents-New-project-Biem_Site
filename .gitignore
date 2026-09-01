@@ -6,3 +6,5 @@ dist/
 *.log
 .DS_Store
 
+# Production-only SMTP credentials. Never commit this file.
+public/api/contact-config.php

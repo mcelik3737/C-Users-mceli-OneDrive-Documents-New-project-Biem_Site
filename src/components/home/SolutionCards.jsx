@@ -1,57 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, Radio, TrainFront, Wifi } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
-
-const wirelessImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0a7fe552c_generated_82fab6dc.png";
-const railImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png";
-const dasImg = "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png";
 
 const solutions = [
   {
     icon: Radio,
+    eyebrow: "KRİTİK SAHA HABERLEŞMESİ",
     title: "Telsiz Haberleşme Sistemleri",
-    text: "DMR, TETRA, PoC, LTE bas-konuş, repeater, multi-site ve dispatcher çözümleriyle saha ekipleri için güvenilir haberleşme altyapıları kuruyoruz.",
-    items: [
-      "Hytera DMR telsiz sistemleri",
-      "Repeater ve multi-site altyapılar",
-      "Dispatcher, kayıt ve takip çözümleri",
-      "PoC / LTE bas-konuş sistemleri",
-    ],
+    text: "DMR, TETRA ve PoC teknolojilerini saha ihtiyacına göre repeater, multi-site, dispatcher, kayıt ve kullanıcı yönetimi çözümleriyle bütünleştiriyoruz.",
+    items: ["DMR / TETRA / PoC", "Repeater & multi-site", "Dispatcher & ses kayıt", "ATEX / Exproof terminal"],
     path: "/telsiz-haberlesme-sistemleri",
-    image: wirelessImg,
-    btnLabel: "Telsiz Çözümlerini İnceleyin",
+    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/0a7fe552c_generated_82fab6dc.png",
   },
   {
     icon: TrainFront,
-    title: "Raylı Sistem Çözümleri",
-    text: "Metro, tramvay, demiryolu, tünel, istasyon ve depo sahaları için haberleşme, güvenlik, acil durum ve yolcu bilgilendirme altyapıları sunuyoruz.",
-    items: [
-      "Tünel telsiz haberleşmesi",
-      "RF repeater / BDA çözümleri",
-      "Anons ve YBS sistemleri",
-      "CCTV, access ve IP santral",
-      "J&R acil durum telefonları",
-    ],
+    eyebrow: "METRO / DEMİRYOLU / TÜNEL",
+    title: "Raylı Sistem Haberleşmesi",
+    text: "İstasyon, depo, hat ve tünel sahalarında kritik haberleşme, acil iletişim ve yardımcı altyapıları tek sistem mimarisi içinde ele alıyoruz.",
+    items: ["Tünel RF kapsama", "TETRA / DMR entegrasyonu", "Acil durum telefonları", "Anons / network altyapısı"],
     path: "/rayli-sistem-cozumleri",
-    image: railImg,
-    btnLabel: "Raylı Sistem Çözümlerini İnceleyin",
+    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/6f10ee50d_generated_1efba74d.png",
   },
   {
     icon: Wifi,
+    eyebrow: "RF COVERAGE ENGINEERING",
     title: "DAS / RF Kapsama Çözümleri",
-    text: "Bina içi, tünel, maden, metro, fabrika ve büyük kapalı alanlarda RF kapsama sorunlarına yönelik DAS, BDA, repeater ve leaky feeder çözümleri geliştiriyoruz.",
-    items: [
-      "Fiber RF Repeater / BDA",
-      "Off-Air BDA sistemleri",
-      "Leaky Feeder sistemleri",
-      "Public Safety DAS",
-      "GSM / LTE / 5G / Wi-Fi DAS",
-    ],
+    text: "Bina, tünel, maden ve büyük endüstriyel sahalarda aktif ve pasif RF mimarisini kapsama hedeflerine göre projelendiriyoruz.",
+    items: ["Fiber / Off-Air Repeater", "BDA & Public Safety DAS", "Leaky Feeder", "Pasif RF & anten sistemleri"],
     path: "/das-rf-kapsama-cozumleri",
-    image: dasImg,
-    btnLabel: "DAS/RF Çözümlerini İnceleyin",
+    image: "https://media.base44.com/images/public/6a0f643fac0d957e314ae3c0/b89abb303_generated_fce2d3bb.png",
   },
 ];
 
@@ -60,51 +38,44 @@ export default function SolutionCards() {
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         <SectionHeader
-          tag="UZMANLIK ALANLARIMIZ"
-          title="Kritik Haberleşme ve Güvenlik Altyapılarında Üç Ana Çözüm Alanı"
-          subtitle="BİEM Teknoloji Elektronik, kritik haberleşme ve güvenlik altyapılarında üç ana çözüm alanına odaklanır."
+          tag="ANA ÇÖZÜM ALANLARI"
+          title="Saha haberleşmesini ürün listesi değil, sistem olarak tasarlıyoruz."
+          subtitle="Telsiz, raylı sistem ve RF kapsama disiplinlerini aynı proje yaklaşımı içinde birleştiriyoruz."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {solutions.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div key={i} className="group relative flex flex-col rounded-xl border border-border/50 bg-card overflow-hidden hover:border-primary/30 transition-all duration-500">
-                {/* Image */}
-                <div className="relative h-52 overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-lg bg-background/80 backdrop-blur-sm border border-border/50 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
+          {solutions.map(({ icon: Icon, eyebrow, title, text, items, path, image }) => (
+            <Link key={title} to={path} className="group relative min-h-[520px] rounded-2xl overflow-hidden border border-border/50 bg-card block hover:border-primary/30 transition-colors">
+              <img
+                src={image}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-[46%] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+              <div className="absolute inset-x-0 top-0 h-[48%] bg-gradient-to-t from-card via-card/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 top-[38%] bg-card" />
 
-                {/* Content */}
-                <div className="flex flex-col flex-1 p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.text}</p>
-                  <ul className="space-y-1.5 mb-6 flex-1">
-                    {s.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to={s.path}>
-                    <Button variant="outline" className="w-full border-primary/20 text-primary hover:bg-primary/10 font-medium text-sm">
-                      {s.btnLabel}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
+              <div className="relative h-full flex flex-col px-6 pt-[205px] sm:pt-[225px] lg:pt-[230px] pb-6">
+                <div className="w-11 h-11 rounded-lg border border-primary/20 bg-background/90 backdrop-blur flex items-center justify-center mb-5">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <p className="text-[9px] font-mono font-semibold tracking-[0.18em] text-primary uppercase mb-2">{eyebrow}</p>
+                <h3 className="text-xl lg:text-2xl font-bold text-foreground tracking-tight mb-3">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-6 mb-5">{text}</p>
+                <ul className="space-y-2 mb-7 flex-1">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-foreground/65">
+                      <span className="w-1 h-1 rounded-full bg-primary shrink-0" /> {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Çözümü inceleyin <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-            );
-          })}
+            </Link>
+          ))}
         </div>
       </div>
     </section>
