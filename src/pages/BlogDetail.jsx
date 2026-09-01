@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import blogPosts from "@/data/blogPosts.json";
+import { localMediaUrl, localizeRichTextMedia } from "@/lib/assets";
 import SEOHead from "@/components/SEOHead";
 import ReactMarkdown from "react-markdown";
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
@@ -13,28 +14,9 @@ const CATEGORY_LABELS = {
 
 export default function BlogDetail() {
   const { id } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+  const post = blogPosts.find((item) => item.id === id && item.published);
 
-  useEffect(() => {
-    base44.entities.BlogPost.filter({ id })
-      .then(results => {
-        if (results.length > 0) setPost(results[0]);
-        else setNotFound(true);
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center py-32">
-        <div className="w-7 h-7 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  if (notFound || !post) {
+  if (!post) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-32 text-center">
         <p className="text-muted-foreground mb-4">Yazı bulunamadı.</p>
@@ -42,6 +24,8 @@ export default function BlogDetail() {
       </div>
     );
   }
+
+  const content = localizeRichTextMedia(post.content);
 
   return (
     <>
@@ -52,9 +36,14 @@ export default function BlogDetail() {
       />
 
       {post.cover_image && (
-        <div className="w-full h-72 lg:h-96 overflow-hidden">
-          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+        <div className="relative w-full h-72 lg:h-[420px] overflow-hidden border-b border-border/30">
+          <img
+            src={localMediaUrl(post.cover_image)}
+            alt={post.title}
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         </div>
       )}
 
@@ -80,6 +69,8 @@ export default function BlogDetail() {
           {post.title}
         </h1>
 
+        <p className="text-base text-muted-foreground leading-relaxed mb-7">{post.summary}</p>
+
         <div className="flex items-center gap-5 text-xs text-muted-foreground mb-8 pb-8 border-b border-border/30">
           {post.author && (
             <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5" />{post.author}</span>
@@ -90,8 +81,13 @@ export default function BlogDetail() {
           </span>
         </div>
 
-        <div className="prose prose-invert prose-sm max-w-none prose-headings:font-bold prose-a:text-primary prose-code:text-primary prose-img:rounded-xl">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+        <div className="prose prose-invert prose-sm md:prose-base max-w-none prose-headings:font-bold prose-a:text-primary prose-code:text-primary prose-img:rounded-xl prose-img:border prose-img:border-border/40">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-border/40 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">Benzer bir saha veya sistem için teknik görüş almak ister misiniz?</p>
+          <Link to="/iletisim" className="text-sm font-semibold text-primary hover:underline">Keşif / teklif talebi →</Link>
         </div>
       </article>
     </>
